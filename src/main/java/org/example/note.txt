@@ -1,0 +1,26 @@
+
+
+
+
+Serilaisation - setter and Deserilaisation - getter  using pojo classes
+
+pojo classes
+creat java object
+json created
+
+POJO (Plain Old Java Object) classes represent JSON data by mapping the JSON structure to Java objects.
+
+Here’s how they work:
+
+Define Classes: For each JSON object, you create a corresponding Java class. The class will have member variables that represent the keys in the JSON object. For example, if your JSON has keys like "id", "name", and "email", your POJO class will have those as fields.
+
+Create Getters and Setters: Each member variable in your Java class needs getters and setters. This allows you to get and set the values of these fields. For instance, if you have a variable name, you would create a getName() method and a setName(String name) method.
+
+Handling Nested JSON: If your JSON contains nested objects or arrays, you will need to create additional POJO classes for these nested structures. For example, if a JSON object has a key that contains another JSON object, you should create a separate class for that object. Similarly, if a key contains an array of objects, you will create a list or array of the corresponding POJO class type.
+
+Serialization and Deserialization: Libraries like Jackson or Gson can convert JSON into Java objects (deserialization) and Java objects into JSON (serialization) using these POJO classes. You will typically configure these libraries to recognize your POJO classes' structure, enabling automatic parsing of JSON data.\
+
+| Concept         | Meaning            | Example                |
+| --------------- | ------------------ | ---------------------- |
+| Serialization   | Java Object → JSON | `.body(object)`        |
+| Deserialization | JSON → Java Object | `.as(ClassName.class)` |
