@@ -1,4 +1,4 @@
-package org.example;
+package org.practices;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import resource.Payload;
 import resource.ReUsableMethods;
 import static io.restassured.RestAssured.given;
-import org.testng.annotations.DataProvider;
 
 public class DynamicJson {
 

@@ -1,0 +1,115 @@
+{
+  "instructor": "RahulShetty",
+  "url": "rahulshettycademy.com",
+  "services": "projectSupport",
+  "expertise": "Automation",
+
+  "courses": {
+
+
+    "webAutomation": [
+
+      {
+        "courseTitle": "Selenium Webdriver Java",
+        "price": "50"
+      },
+      {
+        "courseTitle": "Cypress",
+        "price": "40"
+      },
+      {
+        "courseTitle": "Protractor",
+        "price": "40"
+      }
+
+    ],
+
+
+    "api": [
+
+      {
+        "courseTitle": "Rest Assured Automation using Java",
+        "price": "50"
+      },
+      {
+        "courseTitle": "SoapUI Webservices testing",
+        "price": "40"
+      }
+
+    ],
+
+
+    "mobile": [
+
+      {
+        "courseTitle": "Appium-Mobile Automation using Java",
+        "price": "50"
+      }
+
+    ]
+
+
+  },
+  "linkedIn": "https://www.linkedin.com/in/rahul-shetty-trainer/"
+}
+
+
+Perfect Pyaru 👏
+Here’s your **complete set of JSON Practice Questions** in **English**, rewritten cleanly and clearly — ideal for **Rest Assured or Java JSON parsing practice** and **interview preparation** 💪
+
+---
+
+# 🧩 JSON Practice Questions (for Rest Assured or Java parsing)
+
+## 🔹 **Basic Level (Beginner)**
+
+1. Extract the **instructor name** from the JSON.
+2. Print the value of `"url"`.
+3. Verify that the value of `"expertise"` is `"Automation"`.
+4. Print the `"linkedIn"` URL.
+5. Validate that the value of `"services"` is `"projectSupport"`.
+
+---
+
+## 🔹 **Inside the `courses` object (Medium Level)**
+
+6. Find the total number of courses under the `"webAutomation"` category.
+7. Print the **title** of the first course under the `"api"` category.
+8. Print the **title and price** of the first course under the `"mobile"` category.
+9. Verify that the second course under `"webAutomation"` has the title `"Cypress"`.
+10. Extract the **price of the last course** under the `"api"` category.
+
+---
+
+## 🔹 **Loop-based Questions (Advanced)**
+
+11. Print all the `courseTitle` values inside the `"webAutomation"` array.
+12. Print all the `price` values inside the `"webAutomation"` array.
+13. Print both the `courseTitle` and `price` of every course in the `"api"` array (using a loop).
+14. Loop through all categories (`webAutomation`, `api`, `mobile`) and print the course count in each.
+15. Calculate the **total sum of all course prices** inside the `"courses"` object.
+16. If any course has the title `"Protractor"`, print its price.
+17. Find out **which category** the `"Rest Assured Automation using Java"` course belongs to.
+
+---
+
+## 🔹 **Assertions with Rest Assured**
+
+18. Verify that the price of the `"Cypress"` course is `40`.
+19. Verify that the course `"Appium-Mobile Automation using Java"` belongs to the `"mobile"` category.
+20. Verify that the `"api"` section contains a total of **2 courses**.
+21. Validate that **all course prices are numeric** (convert to `int` and check).
+
+---
+
+## 🔹 **Bonus / Real-time Interview-style Questions**
+
+22. Extract **all unique course titles** from the entire JSON.
+23. Find the **total number of courses** across all categories.
+24. Store all course titles from every category into a single `List<String>`.
+25. Map the entire JSON into a **POJO class**, and extract the price of the `"Selenium Webdriver Java"` course.
+
+---
+
+
+

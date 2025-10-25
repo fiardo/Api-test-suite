@@ -1,28 +1,31 @@
-package org.example;
+package org.practices;
 
 import io.restassured.RestAssured;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
-import resource.Payload;
 import resource.ReUsableMethods;
 
-public class Basics {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-        public static void main(String[] args){
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
+public class DataExtractFromJsonFile {
+
+        public static void main(String[] args) throws IOException {
             //given - all input details
             //when - submit the api - resource , http method
             //then - validate the response
+            //content of the file to string -- content of file can convert into bytes--bytes data to string
 
             RestAssured.baseURI="https://rahulshettyacademy.com";
 
             String response = given().log().all()
                     .queryParam("key" , "qaclick123")
                     .header("Content-Type","application/json")
-                    .body(Payload.AddPlace()).
+                    .body(new String(Files.readAllBytes(Paths.get("D:\\addplace.json")))). // this line takes input from json file
                     when()
                     .post("/maps/api/place/add/json").
                     then()

@@ -1,8 +1,7 @@
-package org.example;
+package org.practices;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import resource.ReUsableMethods;
 
 import java.io.File;

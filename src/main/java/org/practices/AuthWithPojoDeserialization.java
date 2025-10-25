@@ -1,17 +1,13 @@
-package org.example;
+package org.practices;
+
+import io.restassured.path.json.JsonPath;
+import pojoauthdeserialization.GetCourse;
 
 import static io.restassured.RestAssured.given;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import io.restassured.parsing.Parser;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 //Demonstrates retrieving an OAuth access token and using it to call a protected API endpoint using RestAssured.
 
-public class Auth {
+public class AuthWithPojoDeserialization {
 
     public static void main (String[] args) {
 
@@ -36,14 +32,25 @@ public class Auth {
 
         // Use the extracted access token as a query parameter to call a protected endpoint.
         // The token is passed as "access_token" query parameter (per this API's contract).
-        String courseDetails = given().queryParam("access_token", accessToken)
+        GetCourse courseDetails = given().queryParam("access_token", accessToken)
                 .when()
                 .log() // log the outgoing request (including the access token in query)
                 .all()
-                .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").asString();
+                .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(GetCourse.class);
 
         // Print the protected resource response
-        System.out.println(courseDetails);
+        //System.out.println(courseDetails);
+        System.out.println(courseDetails.getLinkedIn());
+        System.out.println(courseDetails.getInstructor());
+        System.out.println(courseDetails.getServices());
+        System.out.println(courseDetails.getExpertise());
+        System.out.println(courseDetails.getUrl());
+
+
+        for (int i = 0 ; i < courseDetails.getCourses().getWebAutomation().size() ; i++){
+            System.out.println("CourseTitle : " + courseDetails.getCourses().getWebAutomation().get(i).getCourseTitle() + ", " +
+                    "Price : " + courseDetails.getCourses().getWebAutomation().get(i).getPrice());
+        }
     }
 
 }

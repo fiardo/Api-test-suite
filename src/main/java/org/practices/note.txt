@@ -2,9 +2,9 @@
 
 
 
-Serilaisation - setter and Deserilaisation - getter  using pojo classes
+Serilaisation - setter and Deserilaisation - getter  using pojoauthdeserialization classes
 
-pojo classes
+pojoauthdeserialization classes
 creat java object
 json created
 

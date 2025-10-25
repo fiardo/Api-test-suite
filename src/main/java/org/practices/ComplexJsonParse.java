@@ -1,4 +1,4 @@
-package org.example;
+package org.practices;
 
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
