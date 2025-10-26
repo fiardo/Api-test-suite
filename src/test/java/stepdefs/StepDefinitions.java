@@ -17,6 +17,8 @@ import resources.Utils;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,15 +34,15 @@ public class StepDefinitions extends Utils {
 
 
     @Given("Add Place Payload")
-    public void add_place_payload() {
+    public void add_place_payload() throws IOException {
         // Write code here that turns the phrase above into concrete actions
-        responsespces = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         response = given().spec(baseResponse()).body(data.addPlacePayload());
     }
 
     @When("User calls {string} with POST request")
     public void user_calls_with_post_request(String string) {
         // Write code here that turns the phrase above into concrete actions
+        responsespces = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         requestsent = response.when().post("/maps/api/place/add/json").then().spec(responsespces).extract().response();
     }
 
