@@ -8,13 +8,15 @@ import java.util.List;
 
 public class TestDataBuild {
 
-    public AddPlace addPlacePayload() {
+
+
+    public AddPlace addPlacePayload(String name , String phone_number , String address)  {
 
         AddPlace p = new AddPlace();
         p.setAccuracy(50);
-        p.setAddress("29, side layout, cohen 09");
-        p.setPhone_number("(+91) 983 893 3937");
-        p.setName("Frontline house");
+        p.setAddress(address);
+        p.setPhone_number(phone_number);
+        p.setName(name);
         p.setLanguage("French-IN");
         p.setWebsite("http://google.com");
 

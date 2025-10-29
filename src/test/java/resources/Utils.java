@@ -13,11 +13,12 @@ import java.util.Properties;
 
 public class Utils {
 
-    public RequestSpecification baseresponse;
+    public static RequestSpecification baseresponse;
 
 
-    public RequestSpecification baseResponse() throws IOException {
+    public static RequestSpecification baseResponse() throws IOException {
 
+        if (baseresponse == null) {
         PrintStream log = new PrintStream(new FileOutputStream("log.txt"));
 
         baseresponse = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
@@ -25,6 +26,8 @@ public class Utils {
                 .addFilter(RequestLoggingFilter.logRequestTo(log))
                 .addFilter(ResponseLoggingFilter.logResponseTo(log))
                 .setContentType(ContentType.JSON).build();
+        return baseresponse;
+        }
         return baseresponse;
 
     }
@@ -35,9 +38,6 @@ public class Utils {
         FileInputStream file = new FileInputStream("D:\\Api-test-suite\\src\\test\\java\\resources\\global.properties");
         prop.load(file);
         return prop.getProperty(key);
-
-
-
 
 
     }
