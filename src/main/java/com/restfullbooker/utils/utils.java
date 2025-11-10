@@ -10,14 +10,19 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class utils {
 
     private static RequestSpecification baserequest;
+    private static String Token;
 
     public static RequestSpecification baseRequest() throws IOException {
         if (baserequest == null) {
             baserequest = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
-                .setContentType(ContentType.JSON).build();
+                    .setContentType(ContentType.JSON)
+                    .addHeader("Host", "restful-booker.herokuapp.com")
+                    .addHeader("Cookie", "token="+Token)
+                    .build();
         }
         return baserequest;
 
@@ -29,4 +34,12 @@ public class utils {
         prop.load(file);
         return prop.getProperty(key);
     }
+
+
+
+
+
+
+
+
 }

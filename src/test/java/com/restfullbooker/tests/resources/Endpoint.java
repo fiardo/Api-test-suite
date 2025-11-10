@@ -1,8 +1,9 @@
 package com.restfullbooker.tests.resources;
 
 public enum Endpoint {
-
-    CreateBooking("https://restful-booker.herokuapp.com/booking");
+    Auth("https://restful-booker.herokuapp.com/auth"),
+    CreateBooking("https://restful-booker.herokuapp.com/booking"),
+    DeleteBooking("https://restful-booker.herokuapp.com/booking/");
 
 
 

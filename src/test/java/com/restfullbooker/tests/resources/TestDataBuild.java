@@ -1,5 +1,6 @@
 package com.restfullbooker.tests.resources;
 
+import com.restfullbooker.pojo.Auth;
 import com.restfullbooker.pojo.CreatBooking;
 import com.restfullbooker.pojo.BookingDates;
 
@@ -31,5 +32,12 @@ public class TestDataBuild {
         return creatbooking;
     }
 
+
+    public Auth authPayload(String username, String password) {
+        Auth auth = new Auth();
+        auth.setUsername(username);
+        auth.setPassword(password);
+        return auth;
+    }
 
 }
